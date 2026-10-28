@@ -1,0 +1,21 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Arquivos gerados pelo Python
+__pycache__/
+*.py[cod]
+
+# Banco SQLite local
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Configuracoes privadas
+.env
+.env.*
+!.env.example
+
+# Cache dos testes
+.pytest_cache/
