@@ -82,9 +82,28 @@ Envie para `POST /produtos`:
 
 O identificador é gerado pelo banco e incluído na resposta.
 
+## Testes automatizados
+
+Com o ambiente virtual ativo e as dependências instaladas, execute
+na pasta principal do projeto:
+
+```bat
+python -m pytest -v
+```
+
+Os quatro testes verificam:
+
+- Cadastro de produto e consulta do registro salvo.
+- Rejeição de código duplicado, sem criar outro produto.
+- Rejeição de preço negativo, sem salvar dados inválidos.
+- Resposta 404 ao consultar um produto inexistente.
+
+Cada teste utiliza um banco SQLite temporário e separado,
+preservando os dados do arquivo `stockflow.db`.
+
 ## Próximas etapas
 
-- Testes automatizados.
+- Ampliar os testes e configurar execução automática no GitHub Actions.
 - Migrações do banco de dados.
 - Registro de entradas e saídas de estoque.
 - Controle de saldo e prevenção de estoque negativo.
